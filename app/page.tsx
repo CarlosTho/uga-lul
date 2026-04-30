@@ -231,11 +231,13 @@ function Hero() {
           <div
             style={{
               fontFamily: SERIF,
-              fontSize: "clamp(14px,2vw,18px)",
+              fontSize: narrow
+                ? "clamp(20px, 5.4vw, 24px)"
+                : "clamp(16px, 2vw, 18px)",
               fontStyle: "italic",
               color: "#EEAA00",
               fontWeight: 400,
-              letterSpacing: 2,
+              letterSpacing: narrow ? 1.5 : 2,
               marginBottom: 8,
             }}
           >
@@ -731,7 +733,7 @@ function Hermanos() {
                 animation: visible ? "fadeUp 0.6s ease both" : "none",
               }}
             >
-              Brotherhood
+              Current brothers
             </div>
             <h2
               style={{
@@ -752,26 +754,11 @@ function Hermanos() {
           </div>
           <a
             href="/hermanos"
+            className="lul-view-all-btn"
             style={{
-              color: "#EEAA00",
-              textDecoration: "none",
-              fontSize: 13,
-              letterSpacing: 2,
-              textTransform: "uppercase",
-              fontWeight: 500,
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
               opacity: visible ? 1 : 0,
               animation: visible ? "fadeUp 0.6s 0.2s ease both" : "none",
-              transition: "gap 0.3s",
             }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.gap = "14px")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.gap = "8px")
-            }
           >
             View All
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -867,32 +854,65 @@ function Timeline() {
       style={{ padding: "120px 80px", background: "rgba(255,255,255,0.01)" }}
     >
       <div ref={ref} style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 64 }}>
-          <div
-            style={{
-              fontSize: 11,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "#EEAA00",
-              marginBottom: 16,
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.6s ease both" : "none",
-            }}
-          >
-            Our Story
+        <div
+          className="lul-timeline-head"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            flexWrap: "wrap",
+            gap: 16,
+            marginBottom: 48,
+          }}
+        >
+          <div style={{ textAlign: "left", minWidth: 0 }}>
+            <div
+              style={{
+                fontSize: 11,
+                letterSpacing: 4,
+                textTransform: "uppercase",
+                color: "#EEAA00",
+                marginBottom: 16,
+                opacity: visible ? 1 : 0,
+                animation: visible ? "fadeUp 0.6s ease both" : "none",
+              }}
+            >
+              Current brothers
+            </div>
+            <h2
+              style={{
+                fontFamily: SERIF,
+                fontSize: "clamp(28px, 4vw, 58px)",
+                fontWeight: 700,
+                color: "#FFFFFF",
+                lineHeight: 1.12,
+                opacity: visible ? 1 : 0,
+                animation: visible ? "fadeUp 0.7s 0.1s ease both" : "none",
+                maxWidth: 560,
+              }}
+            >
+              A Legacy in Time
+            </h2>
           </div>
-          <h2
+          <a
+            href="/about"
+            className="lul-view-all-btn"
             style={{
-              fontFamily: SERIF,
-              fontSize: "clamp(36px,4vw,58px)",
-              fontWeight: 700,
-              color: "#FFFFFF",
               opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.7s 0.1s ease both" : "none",
+              animation: visible ? "fadeUp 0.6s 0.2s ease both" : "none",
             }}
           >
-            A Legacy in Time
-          </h2>
+            View All
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path
+                d="M2 7h10M8 3l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
         </div>
 
         <div className="lul-timeline-track" style={{ position: "relative" }}>
@@ -917,8 +937,8 @@ function Timeline() {
               style={{
                 display: "flex",
                 flexDirection: i % 2 === 0 ? "row" : "row-reverse",
-                gap: 48,
-                marginBottom: 48,
+                gap: "clamp(6px, 2.5vw, 48px)",
+                marginBottom: "clamp(22px, 5vw, 48px)",
                 alignItems: "center",
                 opacity: visible ? 1 : 0,
                 animation: visible
@@ -931,7 +951,8 @@ function Timeline() {
                 style={{
                   flex: 1,
                   textAlign: i % 2 === 0 ? "right" : "left",
-                  padding: "28px 32px",
+                  padding:
+                    "clamp(10px, 2.2vw, 28px) clamp(8px, 2.8vw, 32px)",
                   border: "1px solid rgba(238,170,0,0.15)",
                   borderRadius: 4,
                   background: "rgba(238,170,0,0.02)",
@@ -940,9 +961,10 @@ function Timeline() {
                 }}
               >
                 <div
+                  className="lul-timeline-year"
                   style={{
                     fontFamily: SERIF,
-                    fontSize: 40,
+                    fontSize: "clamp(22px, 6vw, 40px)",
                     fontWeight: 700,
                     color: "rgba(238,170,0,0.2)",
                     lineHeight: 1,
@@ -951,17 +973,25 @@ function Timeline() {
                   {e.year}
                 </div>
                 <h3
+                  className="lul-timeline-title"
                   style={{
                     fontFamily: SERIF,
-                    fontSize: 22,
+                    fontSize: "clamp(15px, 3.8vw, 22px)",
                     fontWeight: 600,
                     color: "#FFFFFF",
-                    margin: "8px 0",
+                    margin: "clamp(4px, 1.2vw, 8px) 0",
                   }}
                 >
                   {e.title}
                 </h3>
-                <p style={{ fontSize: 14, color: "#C4A06A", lineHeight: 1.7 }}>
+                <p
+                  className="lul-timeline-desc"
+                  style={{
+                    fontSize: "clamp(11px, 2.8vw, 14px)",
+                    color: "#C4A06A",
+                    lineHeight: 1.65,
+                  }}
+                >
                   {e.desc}
                 </p>
               </div>

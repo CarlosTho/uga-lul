@@ -360,31 +360,10 @@ body {
     gap: 24px !important;
   }
 
-  .lul-timeline-line {
-    display: none !important;
-  }
-
-  .lul-timeline-row {
-    flex-direction: column !important;
-    gap: 0 !important;
-    margin-bottom: 28px !important;
-    align-items: stretch !important;
-  }
-
-  .lul-timeline-card {
-    flex: none !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    text-align: left !important;
-    padding: 20px 16px !important;
-  }
-
+  /* Timeline stays alternating on mobile; cards shrink via page.tsx clamp + dot size */
   .lul-timeline-dot {
-    display: none !important;
-  }
-
-  .lul-timeline-spacer {
-    display: none !important;
+    width: 8px !important;
+    height: 8px !important;
   }
 
   .lul-join-email-row {
@@ -412,6 +391,32 @@ body {
   .lul-hermanos-head {
     margin-bottom: 32px !important;
   }
+}
+
+/* Shared “View All” control (Hermanos + Timeline headers) */
+.lul-view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border: 1px solid rgba(238, 170, 0, 0.45);
+  border-radius: 4px;
+  color: #eeaa00;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    gap 0.25s ease;
+  flex-shrink: 0;
+}
+.lul-view-all-btn:hover {
+  background: rgba(238, 170, 0, 0.1);
+  border-color: rgba(238, 170, 0, 0.75);
+  gap: 12px;
 }
 
 /* Mobile nav: smooth drawer + backdrop */
