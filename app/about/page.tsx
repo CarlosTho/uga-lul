@@ -43,19 +43,6 @@ const PILLARS: Pillar[] = [
   },
 ];
 
-interface QuickFact {
-  label: string;
-  value: string;
-  italic?: boolean;
-}
-
-const QUICK_FACTS: QuickFact[] = [
-  { label: "Founded", value: "February 19, 1982 — Cornell University" },
-  { label: "Beta Tau Chartered", value: "2017 — University of Georgia" },
-  { label: "Colors", value: "Brown, Gold, Red, White" },
-  { label: "Motto", value: "La Unidad Para Siempre", italic: true },
-];
-
 function PageHero() {
   const [ref, visible] = useScrollReveal(0.1);
 
@@ -619,92 +606,6 @@ function FoundingHistory() {
   );
 }
 
-function QuickFactsSection() {
-  const [ref, visible] = useScrollReveal();
-  return (
-    <section style={{ padding: "120px 80px" }}>
-      <div ref={ref} style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <div
-            style={{
-              fontSize: 11,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "#EEAA00",
-              marginBottom: 16,
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.6s ease both" : "none",
-            }}
-          >
-            At a Glance
-          </div>
-          <h2
-            style={{
-              fontFamily: SERIF,
-              fontSize: "clamp(32px,4vw,52px)",
-              fontWeight: 700,
-              color: "#FFFFFF",
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.7s 0.1s ease both" : "none",
-            }}
-          >
-            Quick Facts
-          </h2>
-        </div>
-
-        <div
-          className="lul-pillars-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2,1fr)",
-            gap: 24,
-          }}
-        >
-          {QUICK_FACTS.map((f, i) => (
-            <div
-              key={f.label}
-              style={{
-                padding: "32px 36px",
-                border: "1px solid rgba(238,170,0,0.15)",
-                borderRadius: 4,
-                background: "rgba(238,170,0,0.02)",
-                opacity: visible ? 1 : 0,
-                animation: visible
-                  ? `fadeUp 0.6s ${0.1 * i + 0.2}s ease both`
-                  : "none",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 11,
-                  letterSpacing: 3,
-                  textTransform: "uppercase",
-                  color: "#EEAA00",
-                  marginBottom: 12,
-                }}
-              >
-                {f.label}
-              </div>
-              <div
-                style={{
-                  fontFamily: SERIF,
-                  fontSize: 24,
-                  fontWeight: 600,
-                  color: "#FFFFFF",
-                  fontStyle: f.italic ? "italic" : "normal",
-                  lineHeight: 1.3,
-                }}
-              >
-                {f.value}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function AboutPage() {
   return (
     <div className="lul-site-root" style={{ background: "#1A0D06", minHeight: "100vh" }}>
@@ -714,7 +615,6 @@ export default function AboutPage() {
       <PillarsSection />
       <ULead />
       <FoundingHistory />
-      <QuickFactsSection />
       <SiteFooter />
     </div>
   );

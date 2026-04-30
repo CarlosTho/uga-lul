@@ -87,7 +87,12 @@ export default function SiteNavbar({ activeSection }: SiteNavbarProps) {
     }
   ) => {
     const sectionId = l.hash.slice(1);
-    const isActive = isHome && activeSection === sectionId;
+    const isActive =
+      l.route === "/about"
+        ? pathname === "/about" || (isHome && activeSection === "about")
+        : l.route === "/hermanos"
+          ? pathname === "/hermanos" || (isHome && activeSection === "hermanos")
+          : isHome && activeSection === sectionId;
 
     const baseStyle: React.CSSProperties = {
       color: isActive ? "#EEAA00" : "#D4B88A",
@@ -120,7 +125,21 @@ export default function SiteNavbar({ activeSection }: SiteNavbarProps) {
     const mobileCls = opts?.mobileLinkClass;
 
     if (isHome) {
-      // Full chapter page, not the home #hermanos section
+      if (l.route === "/about") {
+        return (
+          <Link
+            key={l.label}
+            href="/about"
+            className={mobileCls}
+            style={baseStyle}
+            onMouseEnter={onEnter}
+            onMouseLeave={onLeave}
+            onClick={() => opts?.onNavigate?.()}
+          >
+            {l.label}
+          </Link>
+        );
+      }
       if (l.route === "/hermanos") {
         const hermanosActive = activeSection === "hermanos";
         const hermanosStyle: React.CSSProperties = {
