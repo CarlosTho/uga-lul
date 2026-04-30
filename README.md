@@ -138,14 +138,45 @@ npm run lint      # runs Next.js ESLint checks
 
 ---
 
-## Deployment (short note)
+## Deploy to Vercel (this repo)
 
-This is a static-friendly Next app. Common hosts:
+This app is a normal **Next.js 15** project. Vercel detects it from `package.json` — you do **not** need a `vercel.json` file for a basic deploy.
 
-- **Vercel** (zero-config for Next.js)
-- Any Node host that runs `npm run build` and `npm run start`
+### One-time setup
 
-Set environment variables only if you add features that need them; the current site runs without a `.env` for basic viewing.
+1. Push this repo to GitHub (you already use **`CarlosTho/uga-lul`**).
+2. Go to [vercel.com](https://vercel.com) → sign in with **GitHub**.
+3. **Add New… → Project** → **Import** `CarlosTho/uga-lul`.
+
+### Project settings (important)
+
+| Setting | Value |
+|--------|--------|
+| **Framework Preset** | **Next.js** (or leave **Auto** — do **not** use “Other”) |
+| **Root Directory** | **`./`** — only change this if `package.json` is *inside* a subfolder (e.g. `my-app`). For `uga-lul` with the app at the repo root, keep **`./`**. |
+| **Build Command** | Default (`next build` — leave blank / default) |
+| **Output Directory** | Default (leave blank) |
+| **Install Command** | Default (`npm install`) |
+
+No **environment variables** are required for the current site.
+
+4. Click **Deploy**. When the build finishes, open the **`.vercel.app`** URL.
+
+### After deploy
+
+- **Automatic deploys:** pushes to **`main`** redeploy production (default).
+- **Preview:** other branches / PRs get preview URLs.
+- **Custom domain:** Project → **Settings → Domains** → add your domain and follow DNS steps.
+
+### If the build fails on Vercel
+
+- Confirm **Root Directory** points at the folder that contains **`package.json`**.
+- Open the failed deployment → **Building** log; fix the error locally, then `git push` again.
+- Run **`npm run build`** on your machine first — it should pass (same command Vercel runs).
+
+### Other hosts
+
+Any Node host that runs `npm run build` then `npm run start` can serve the app; Vercel is the path of least resistance for Next.js.
 
 ---
 
