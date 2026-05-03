@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import SiteNavbar from "@/components/site-navbar";
 import SiteFooter from "@/components/site-footer";
 import Particles from "@/components/particles";
@@ -8,35 +7,6 @@ import { useScrollReveal } from "@/lib/use-scroll-reveal";
 
 const SERIF = "var(--font-cormorant), 'Cormorant Garamond', serif";
 const BEBAS = "var(--font-bebas), 'Bebas Neue', sans-serif";
-
-interface Brother {
-  name: string;
-}
-
-/** Eta → Theta order */
-const ETA_UNDERGRADUATES: Brother[] = [
-  { name: "Nathan Valles" },
-  { name: "Ivan Mendoza" },
-  { name: "Carlos Cruz" },
-  { name: "Bryan Acevedo Sierra" },
-  { name: "JoseLuis Reyes" },
-];
-
-const THETA_UNDERGRADUATES: Brother[] = [
-  { name: "Angelo Vallecillo" },
-  { name: "Daniel Acosta" },
-  { name: "Winston Chung" },
-];
-
-function initialsFromName(name: string): string {
-  const parts = name.trim().split(/\s+/);
-  if (parts.length >= 2) {
-    const a = parts[0][0] ?? "";
-    const b = parts[parts.length - 1][0] ?? "";
-    return (a + b).toUpperCase();
-  }
-  return name.slice(0, 2).toUpperCase();
-}
 
 interface LineRecord {
   season: string;
@@ -238,187 +208,9 @@ function PageHero() {
           }}
         >
           Our Brothers of the{" "}
-          <em style={{ color: "#EEAA00", fontStyle: "normal" }}>Beta Tau</em>{" "}
+          <em className="gold-shine" style={{ fontStyle: "normal" }}>Beta Tau</em>{" "}
           Chapter
         </h1>
-      </div>
-    </section>
-  );
-}
-
-interface BrotherCardProps {
-  brother: Brother;
-  index: number;
-  visible: boolean;
-}
-
-function BrotherCard({ brother, index, visible }: BrotherCardProps) {
-  const [hovered, setHovered] = useState(false);
-  const initials = initialsFromName(brother.name);
-  return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        position: "relative",
-        overflow: "hidden",
-        border: "1px solid rgba(238,170,0,0.15)",
-        borderRadius: 4,
-        padding: "40px 32px",
-        cursor: "pointer",
-        transition: "all 0.4s",
-        background: hovered ? "rgba(238,170,0,0.05)" : "transparent",
-        transform: hovered ? "translateY(-4px)" : "none",
-        boxShadow: hovered ? "0 20px 60px rgba(0,0,0,0.4)" : "none",
-        opacity: visible ? 1 : 0,
-        animation: visible
-          ? `fadeUp 0.6s ${0.08 * index + 0.2}s ease both`
-          : "none",
-        textAlign: "center",
-      }}
-    >
-      <div
-        aria-hidden
-        style={{
-          width: 96,
-          height: 96,
-          borderRadius: "50%",
-          background:
-            "linear-gradient(135deg, rgba(238,170,0,0.3), rgba(238,170,0,0.1))",
-          border: "1px solid rgba(238,170,0,0.3)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          margin: "0 auto 20px",
-          fontFamily: SERIF,
-          fontSize: 28,
-          fontWeight: 700,
-          color: "#EEAA00",
-        }}
-      >
-        {initials}
-      </div>
-      <h3
-        style={{
-          fontFamily: SERIF,
-          fontSize: 22,
-          fontWeight: 600,
-          color: "#FFFFFF",
-          marginBottom: 0,
-        }}
-      >
-        {brother.name}
-      </h3>
-
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 2,
-          background:
-            "linear-gradient(90deg, transparent, #EEAA00, transparent)",
-          opacity: hovered ? 1 : 0,
-          transition: "opacity 0.3s",
-        }}
-      />
-    </div>
-  );
-}
-
-function Undergraduates() {
-  const [ref, visible] = useScrollReveal();
-  return (
-    <section style={{ padding: "120px 80px" }}>
-      <div ref={ref} style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 56 }}>
-          <div
-            style={{
-              fontSize: 11,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "#EEAA00",
-              marginBottom: 16,
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.6s ease both" : "none",
-            }}
-          >
-            Current Brothers
-          </div>
-          <h2
-            style={{
-              fontFamily: SERIF,
-              fontSize: "clamp(26px, 6.5vw, 52px)",
-              fontWeight: 700,
-              color: "#FFFFFF",
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.7s 0.1s ease both" : "none",
-              lineHeight: 1.12,
-              overflowWrap: "break-word",
-            }}
-          >
-            Undergraduates
-          </h2>
-        </div>
-
-        <div
-          className="lul-hermanos-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3,1fr)",
-            gap: 24,
-          }}
-        >
-          <div
-            style={{
-              gridColumn: "1 / -1",
-              textAlign: "center",
-              marginBottom: 8,
-              marginTop: 0,
-              fontSize: 12,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "#EEAA00",
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.6s ease both" : "none",
-            }}
-          >
-            Eta Line
-          </div>
-          {ETA_UNDERGRADUATES.map((b, i) => (
-            <BrotherCard
-              key={b.name}
-              brother={b}
-              index={i}
-              visible={visible}
-            />
-          ))}
-          <div
-            style={{
-              gridColumn: "1 / -1",
-              textAlign: "center",
-              marginBottom: 8,
-              marginTop: 28,
-              fontSize: 12,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "#EEAA00",
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.6s 0.05s ease both" : "none",
-            }}
-          >
-            Theta Line
-          </div>
-          {THETA_UNDERGRADUATES.map((b, i) => (
-            <BrotherCard
-              key={b.name}
-              brother={b}
-              index={ETA_UNDERGRADUATES.length + i}
-              visible={visible}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -582,7 +374,6 @@ export default function HermanosPage() {
     <div className="lul-site-root" style={{ background: "#1A0D06", minHeight: "100vh" }}>
       <SiteNavbar />
       <PageHero />
-      <Undergraduates />
       <CrossingHistory />
       <SiteFooter />
     </div>

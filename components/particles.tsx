@@ -40,7 +40,7 @@ export default function Particles({ count = 18 }: ParticlesProps) {
         inset: 0,
         overflow: "hidden",
         pointerEvents: "none",
-        zIndex: 1,
+        zIndex: 0,
       }}
     >
       {particles.map((p) => (

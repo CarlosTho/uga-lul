@@ -68,10 +68,10 @@ export default function FloatingLulSymbol() {
     const tick = () => {
       const now = performance.now();
       const w = window.innerWidth;
-      const ix = w < 640 ? 2.8 : 4.8;
+      const ix = w < 640 ? 5 : 9;
       const iy = w < 640 ? 3.2 : 5.5;
       const idleX =
-        Math.sin(now * 0.00058) * ix + Math.cos(now * 0.00042) * (ix * 0.55);
+        Math.sin(now * 0.0009) * ix + Math.cos(now * 0.00065) * (ix * 0.45);
       const idleY =
         Math.cos(now * 0.00052) * iy + Math.sin(now * 0.00066) * (iy * 0.6);
 

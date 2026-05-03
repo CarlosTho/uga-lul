@@ -51,21 +51,15 @@ function Hero() {
   }, []);
 
   const parallaxMul = reducedMotion ? 0.22 : 1;
-  const eliteLift = heroScrollT * -68 * parallaxMul;
-  const eliteFade = 1 - heroScrollT * (reducedMotion ? 0.35 : 0.55);
-  const eliteScale = 1 - heroScrollT * (reducedMotion ? 0.04 : 0.11);
   const orbFloat = heroScrollT * 42 * parallaxMul;
   const orbFloat2 = heroScrollT * -26 * parallaxMul;
-
-  const eliteBaseY = narrow ? -22 : 0;
-  const eliteMotion = `translateY(${eliteBaseY + eliteLift}px) scale(${eliteScale})`;
 
   return (
     <section
       ref={heroRef}
       id="hero"
       style={{
-        minHeight: "100vh",
+        minHeight: "100dvh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -75,9 +69,13 @@ function Hero() {
         paddingTop: narrow
           ? "calc(76px + env(safe-area-inset-top, 0px))"
           : "env(safe-area-inset-top, 0px)",
-        paddingBottom: 0,
-        paddingLeft: "clamp(16px, 5vw, 40px)",
-        paddingRight: "clamp(16px, 5vw, 40px)",
+        paddingBottom: narrow
+          ? "max(24px, env(safe-area-inset-bottom, 0px))"
+          : "max(32px, env(safe-area-inset-bottom, 0px))",
+        paddingLeft:
+          "max(clamp(16px, 5vw, 40px), env(safe-area-inset-left, 0px))",
+        paddingRight:
+          "max(clamp(16px, 5vw, 40px), env(safe-area-inset-right, 0px))",
       }}
     >
       <div
@@ -123,43 +121,31 @@ function Hero() {
 
       <Particles count={20} />
 
-      <div
-        className="hero-elite-watermark"
+<div
+        aria-hidden="true"
         style={{
           position: "absolute",
-          left: 0,
-          right: 0,
-          bottom: narrow ? 0 : -20,
+          inset: 0,
           display: "flex",
+          alignItems: "center",
           justifyContent: "center",
-          alignItems: "flex-end",
-          paddingLeft: "env(safe-area-inset-left, 0px)",
-          paddingRight: "env(safe-area-inset-right, 0px)",
-          lineHeight: 1,
           pointerEvents: "none",
-          zIndex: 0,
+          userSelect: "none",
+          zIndex: 1,
           overflow: "hidden",
         }}
       >
         <span
-          className={
-            reducedMotion
-              ? "hero-elite-text hero-elite-text--static"
-              : "hero-elite-text"
-          }
+          className="hero-elite-bg"
           style={{
             fontFamily: BEBAS,
             fontSize: narrow
-              ? "clamp(40px, 10.5vw, 96px)"
-              : "clamp(120px, 22vw, 280px)",
-            letterSpacing: narrow ? "0.1em" : "0.2em",
+              ? "clamp(120px, 40vw, 240px)"
+              : "clamp(180px, 28vw, 400px)",
+            color: "#EEAA00",
             whiteSpace: "nowrap",
-            userSelect: "none",
-            transformOrigin: "50% 100%",
-            transform: eliteMotion,
-            opacity: Math.max(0.15, eliteFade),
-            transition: reducedMotion ? "none" : "opacity 0.15s ease-out",
-            willChange: "transform, opacity",
+            lineHeight: 1,
+            fontWeight: 700,
           }}
         >
           ELITE
@@ -173,8 +159,9 @@ function Hero() {
           width: "100%",
           maxWidth: 800,
           minWidth: 0,
+          marginInline: "auto",
           textAlign: "center",
-          transform: narrow ? "translateY(-28px)" : "translateY(-44px)",
+          boxSizing: "border-box",
         }}
       >
         <div
@@ -184,9 +171,9 @@ function Hero() {
             gap: narrow ? 10 : 16,
             justifyContent: "center",
             flexWrap: "wrap",
+            width: "100%",
+            marginTop: narrow ? 40 : 160,
             marginBottom: 24,
-            paddingLeft: narrow ? 4 : 0,
-            paddingRight: narrow ? 4 : 0,
             opacity: titleVisible ? 1 : 0,
             animation: titleVisible ? "fadeUp 0.7s ease forwards" : "none",
           }}
@@ -201,7 +188,7 @@ function Hero() {
           />
           <span
             style={{
-              fontSize: narrow ? 10 : 12,
+              fontSize: narrow ? 13 : 12,
               letterSpacing: narrow ? 2.5 : 4,
               textTransform: "uppercase",
               color: "#EEAA00",
@@ -224,6 +211,7 @@ function Hero() {
 
         <div
           style={{
+            width: "100%",
             opacity: titleVisible ? 1 : 0,
             animation: titleVisible ? "heroTextIn 0.9s 0.1s ease both" : "none",
           }}
@@ -239,9 +227,10 @@ function Hero() {
               fontWeight: 400,
               letterSpacing: narrow ? 1.5 : 2,
               marginBottom: 8,
+              textAlign: "center",
             }}
           >
-            The Beta Tau Chapter of
+            The <span className="gold-shine">Beta Tau</span> Chapter of
           </div>
           <h1
             style={{
@@ -251,7 +240,9 @@ function Hero() {
               lineHeight: 1.05,
               color: "#FFFFFF",
               letterSpacing: -1,
-              marginBottom: 8,
+              margin: "0 0 8px",
+              padding: 0,
+              textAlign: "center",
             }}
           >
             La Unidad Latina,
@@ -263,14 +254,16 @@ function Hero() {
               fontWeight: 700,
               lineHeight: 1.08,
               letterSpacing: -0.5,
-              marginBottom: 32,
+              margin: "0 0 32px",
+              padding: 0,
+              textAlign: "center",
               background: `linear-gradient(90deg, #EEAA00, #FFD040, #EEAA00)`,
               backgroundSize: "200% auto",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
               animation: "shimmer 4s linear infinite",
-              maxWidth: 900,
+              maxWidth: "min(900px, 100%)",
               marginLeft: "auto",
               marginRight: "auto",
             }}
@@ -285,7 +278,10 @@ function Hero() {
             fontSize: 16,
             lineHeight: 1.8,
             maxWidth: 560,
+            width: "100%",
             margin: "0 auto 40px",
+            padding: 0,
+            textAlign: "center",
             opacity: titleVisible ? 1 : 0,
             animation: titleVisible ? "fadeUp 0.8s 0.4s ease both" : "none",
           }}
@@ -301,6 +297,8 @@ function Hero() {
             gap: 16,
             flexWrap: "wrap",
             justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
             opacity: titleVisible ? 1 : 0,
             animation: titleVisible ? "fadeUp 0.8s 0.6s ease both" : "none",
           }}
@@ -312,27 +310,36 @@ function Hero() {
               alignItems: "center",
               gap: 10,
               padding: "16px 36px",
-              background: "#EEAA00",
-              color: "#1A0D06",
+              background:
+                "linear-gradient(180deg, #FFE9A0 0%, #FFC83D 22%, #E89A00 55%, #B97200 100%)",
+              color: "#3A1F00",
               textDecoration: "none",
               fontSize: 12,
-              fontWeight: 700,
+              fontWeight: 800,
               letterSpacing: 3,
               textTransform: "uppercase",
-              borderRadius: 2,
+              borderRadius: 4,
+              border: "1px solid #8C5A00",
+              boxShadow:
+                "inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -2px 0 rgba(120,70,0,0.55), 0 4px 14px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,225,140,0.4)",
+              textShadow: "0 1px 0 rgba(255,235,170,0.6)",
               transition: "all 0.3s",
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget;
-              el.style.background = "#FFD040";
+              el.style.background =
+                "linear-gradient(180deg, #FFF6CC 0%, #FFD75A 22%, #F1A700 55%, #C57E00 100%)";
               el.style.transform = "translateY(-2px)";
-              el.style.boxShadow = "0 12px 40px rgba(238,170,0,0.4)";
+              el.style.boxShadow =
+                "inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -2px 0 rgba(120,70,0,0.6), 0 14px 36px rgba(238,170,0,0.45), 0 0 0 1px rgba(255,235,160,0.55)";
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget;
-              el.style.background = "#EEAA00";
+              el.style.background =
+                "linear-gradient(180deg, #FFE9A0 0%, #FFC83D 22%, #E89A00 55%, #B97200 100%)";
               el.style.transform = "none";
-              el.style.boxShadow = "none";
+              el.style.boxShadow =
+                "inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -2px 0 rgba(120,70,0,0.55), 0 4px 14px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,225,140,0.4)";
             }}
           >
             Learn More
@@ -347,6 +354,7 @@ function Hero() {
             </svg>
           </a>
         </div>
+
       </div>
     </section>
   );
@@ -583,18 +591,15 @@ function About() {
 }
 
 // ── Hermanos (landing): matches /hermanos undergrad roster · Eta → Theta ──
-const LANDING_ETA_BROTHERS = [
-  { name: "Nathan Valles", initial: "NV", role: "Brother", year: "Undergrad" },
-  { name: "Ivan Mendoza", initial: "IM", role: "Brother", year: "Undergrad" },
-  { name: "Carlos Cruz", initial: "CC", role: "Brother", year: "Undergrad" },
-  { name: "Bryan Acevedo Sierra", initial: "BS", role: "Brother", year: "Undergrad" },
-  { name: "JoseLuis Reyes", initial: "JR", role: "Brother", year: "Undergrad" },
-] as const;
-
-const LANDING_THETA_BROTHERS = [
-  { name: "Angelo Vallecillo", initial: "AV", role: "Brother", year: "Undergrad" },
-  { name: "Daniel Acosta", initial: "DA", role: "Brother", year: "Undergrad" },
-  { name: "Winston Chung", initial: "WC", role: "Brother", year: "Undergrad" },
+const LANDING_BROTHERS = [
+  { name: "Nathan Valles", initial: "NV", role: "Brother", year: "Undergrad", line: "Eta" },
+  { name: "Ivan Mendoza", initial: "IM", role: "Brother", year: "Undergrad", line: "Eta" },
+  { name: "Carlos Cruz", initial: "CC", role: "Brother", year: "Undergrad", line: "Eta" },
+  { name: "Bryan Acevedo Sierra", initial: "BS", role: "Brother", year: "Undergrad", line: "Eta" },
+  { name: "JoseLuis Reyes", initial: "JR", role: "Brother", year: "Undergrad", line: "Eta" },
+  { name: "Angelo Vallecillo", initial: "AV", role: "Brother", year: "Undergrad", line: "Theta" },
+  { name: "Daniel Acosta", initial: "DA", role: "Brother", year: "Undergrad", line: "Theta" },
+  { name: "Winston Chung", initial: "WC", role: "Brother", year: "Undergrad", line: "Theta" },
 ] as const;
 
 type LandingBrother = {
@@ -602,6 +607,7 @@ type LandingBrother = {
   readonly initial: string;
   readonly role: string;
   readonly year: string;
+  readonly line: string;
 };
 
 function LandingHermanosCard({
@@ -684,7 +690,21 @@ function LandingHermanosCard({
       >
         {b.name}
       </h3>
-      <div style={{ fontSize: 13, color: "#8A6030" }}>{b.year}</div>
+      <div style={{ fontSize: 13, color: "#8A6030", marginBottom: 6 }}>{b.year}</div>
+      <div
+        style={{
+          display: "inline-block",
+          fontSize: 10,
+          letterSpacing: 2,
+          textTransform: "uppercase",
+          color: "#EEAA00",
+          border: "1px solid rgba(238,170,0,0.4)",
+          borderRadius: 999,
+          padding: "3px 10px",
+        }}
+      >
+        {b.line} Line
+      </div>
 
       <div
         style={{
@@ -748,7 +768,7 @@ function Hermanos() {
               }}
             >
               Our Brothers of the{" "}
-              <em style={{ color: "#EEAA00", fontStyle: "normal" }}>Beta Tau</em>{" "}
+              <em className="gold-shine" style={{ fontStyle: "normal" }}>Beta Tau</em>{" "}
               Chapter
             </h2>
           </div>
@@ -781,53 +801,11 @@ function Hermanos() {
             gap: 24,
           }}
         >
-          <div
-            style={{
-              gridColumn: "1 / -1",
-              textAlign: "center",
-              marginBottom: 8,
-              marginTop: 0,
-              fontSize: 12,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "#EEAA00",
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.6s ease both" : "none",
-            }}
-          >
-            Eta Line
-          </div>
-          {LANDING_ETA_BROTHERS.map((b, i) => (
+          {LANDING_BROTHERS.map((b, i) => (
             <LandingHermanosCard
               key={b.name}
               b={b}
               index={i}
-              hovered={hovered}
-              setHovered={setHovered}
-              visible={visible}
-            />
-          ))}
-          <div
-            style={{
-              gridColumn: "1 / -1",
-              textAlign: "center",
-              marginBottom: 8,
-              marginTop: 28,
-              fontSize: 12,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "#EEAA00",
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.6s 0.05s ease both" : "none",
-            }}
-          >
-            Theta Line
-          </div>
-          {LANDING_THETA_BROTHERS.map((b, i) => (
-            <LandingHermanosCard
-              key={b.name}
-              b={b}
-              index={LANDING_ETA_BROTHERS.length + i}
               hovered={hovered}
               setHovered={setHovered}
               visible={visible}
@@ -1069,7 +1047,7 @@ function Join() {
             animation: visible ? "fadeUp 0.7s 0.1s ease both" : "none",
           }}
         >
-          Ready to become{" "}
+          Want to become{" "}
           <span
             style={{
               fontFamily: SERIF,
