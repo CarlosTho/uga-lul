@@ -146,6 +146,8 @@ function Hero() {
             whiteSpace: "nowrap",
             lineHeight: 1,
             fontWeight: 700,
+            flexShrink: 0,
+            textAlign: "center",
           }}
         >
           ELITE
