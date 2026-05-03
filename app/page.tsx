@@ -9,7 +9,6 @@ import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 import Image from "next/image";
 
 const SERIF = "var(--font-cormorant), 'Cormorant Garamond', serif";
-const BEBAS = "var(--font-bebas), 'Bebas Neue', sans-serif";
 
 // ── Hero ─────────────────────────────────────────────────────────
 function Hero() {
@@ -121,39 +120,6 @@ function Hero() {
 
       <Particles count={20} />
 
-<div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          pointerEvents: "none",
-          userSelect: "none",
-          zIndex: 1,
-          overflow: "hidden",
-        }}
-      >
-        <span
-          className="hero-elite-bg"
-          style={{
-            fontFamily: BEBAS,
-            fontSize: narrow
-              ? "clamp(120px, 40vw, 240px)"
-              : "clamp(180px, 28vw, 400px)",
-            color: "#EEAA00",
-            whiteSpace: "nowrap",
-            lineHeight: 1,
-            fontWeight: 700,
-            flexShrink: 0,
-            textAlign: "center",
-          }}
-        >
-          ELITE
-        </span>
-      </div>
-
       <div
         style={{
           position: "relative",
@@ -235,6 +201,7 @@ function Hero() {
             The <span className="gold-shine">Beta Tau</span> Chapter of
           </div>
           <h1
+            className="lul-hero-title-1"
             style={{
               fontFamily: SERIF,
               fontSize: "clamp(40px,5.5vw,82px)",
@@ -245,11 +212,17 @@ function Hero() {
               margin: "0 0 8px",
               padding: 0,
               textAlign: "center",
+              opacity: titleVisible ? 1 : 0,
+              animation: titleVisible
+                ? "titleDramaIn 1.1s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both"
+                : "none",
+              willChange: "transform, filter, opacity",
             }}
           >
             La Unidad Latina,
           </h1>
           <h1
+            className="lul-hero-title-2"
             style={{
               fontFamily: SERIF,
               fontSize: "clamp(28px, 4.2vw, 72px)",
@@ -264,10 +237,14 @@ function Hero() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              animation: "shimmer 4s linear infinite",
+              opacity: titleVisible ? 1 : 0,
+              animation: titleVisible
+                ? "titleSweepIn 1.3s 0.55s cubic-bezier(0.22, 1, 0.36, 1) both, shimmer 4s 1.9s linear infinite"
+                : "none",
               maxWidth: "min(900px, 100%)",
               marginLeft: "auto",
               marginRight: "auto",
+              willChange: "transform, filter, clip-path, opacity",
             }}
           >
             Lambda Upsilon Lambda Fraternity, Inc.

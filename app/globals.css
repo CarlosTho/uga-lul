@@ -98,24 +98,6 @@ body {
   }
 }
 
-/* Hero ELITE backdrop — clean opacity pulse */
-@keyframes elitePulse {
-  0%, 100% { opacity: 0.05; }
-  50%      { opacity: 0.11; }
-}
-
-.hero-elite-bg {
-  letter-spacing: 0.18em;
-  animation: elitePulse 6s ease-in-out infinite;
-  will-change: opacity;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-elite-bg {
-    animation: none !important;
-  }
-}
-
 /* Shining gold sweep used on emphasized words like "Beta Tau" */
 @keyframes goldShine {
   0% {
@@ -238,6 +220,60 @@ body {
   to {
     opacity: 1;
     transform: translateY(0) skewY(0);
+  }
+}
+
+/* Hero — dramatic entrance for "La Unidad Latina," */
+@keyframes titleDramaIn {
+  0% {
+    opacity: 0;
+    transform: translateY(72px) scale(1.18) rotate(-1.5deg);
+    filter: blur(22px);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(-8px) scale(0.985) rotate(0.4deg);
+    filter: blur(2.5px);
+  }
+  80% {
+    transform: translateY(3px) scale(1.005) rotate(0deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Hero — sweep-in reveal for "Lambda Upsilon Lambda Fraternity, Inc." */
+@keyframes titleSweepIn {
+  0% {
+    opacity: 0;
+    transform: translateY(48px) skewX(-7deg);
+    clip-path: inset(0 100% 0 0);
+    filter: blur(10px);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(-5px) skewX(-1.2deg);
+    clip-path: inset(0 0 0 0);
+    filter: blur(2.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewX(0);
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lul-hero-title-1,
+  .lul-hero-title-2 {
+    animation: fadeUp 0.6s ease both !important;
+    filter: none !important;
+    clip-path: none !important;
   }
 }
 
