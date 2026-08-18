@@ -225,7 +225,7 @@ function Hero() {
               color: "#EEAA00",
               fontWeight: 400,
               letterSpacing: narrow ? 1.5 : 2,
-              marginBottom: 8,
+              marginBottom: narrow ? 24 : 34,
               textAlign: "center",
             }}
           >
