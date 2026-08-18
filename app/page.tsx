@@ -7,6 +7,7 @@ import Particles from "@/components/particles";
 import { useScrollReveal } from "@/lib/use-scroll-reveal";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 import Image from "next/image";
+import { useForm, ValidationError } from "@formspree/react";
 
 const SERIF = "var(--font-cormorant), 'Cormorant Garamond', serif";
 
@@ -1018,8 +1019,7 @@ function Timeline() {
 // ── Join ─────────────────────────────────────────────────────────
 function Join() {
   const [ref, visible] = useScrollReveal();
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [state, handleSubmit] = useForm("mgawpnaa");
 
   return (
     <section
@@ -1101,64 +1101,104 @@ function Join() {
           and we&rsquo;ll reach out.
         </p>
 
-        {!submitted ? (
-          <div
-            className="lul-join-email-row"
+        {!state.succeeded ? (
+          <form
+            onSubmit={handleSubmit}
             style={{
-              display: "flex",
-              gap: 0,
-              maxWidth: 460,
-              margin: "0 auto",
               opacity: visible ? 1 : 0,
               animation: visible ? "fadeUp 0.7s 0.3s ease both" : "none",
             }}
           >
             <input
-              type="email"
-              placeholder="Enter email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="hidden"
+              name="_subject"
+              value="New interest form submission — LUL Beta Tau"
+            />
+            <div
+              className="lul-join-email-row"
               style={{
-                flex: 1,
-                padding: "16px 24px",
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(238,170,0,0.3)",
-                borderRight: "none",
-                color: "#FFFFFF",
-                fontSize: 15,
-                outline: "none",
-                borderRadius: "2px 0 0 2px",
-                fontFamily: "inherit",
+                display: "flex",
+                gap: 0,
+                maxWidth: 460,
+                margin: "0 auto",
+              }}
+            >
+              <input
+                id="join-email"
+                type="email"
+                name="email"
+                required
+                autoComplete="email"
+                placeholder="Enter email"
+                aria-label="Email address"
+                disabled={state.submitting}
+                style={{
+                  flex: 1,
+                  padding: "16px 24px",
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(238,170,0,0.3)",
+                  borderRight: "none",
+                  color: "#FFFFFF",
+                  fontSize: 15,
+                  outline: "none",
+                  borderRadius: "2px 0 0 2px",
+                  fontFamily: "inherit",
+                }}
+              />
+              <button
+                type="submit"
+                disabled={state.submitting}
+                style={{
+                  padding: "16px 32px",
+                  background: "#EEAA00",
+                  border: "none",
+                  cursor: state.submitting ? "wait" : "pointer",
+                  opacity: state.submitting ? 0.7 : 1,
+                  color: "#1A0D06",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: 2,
+                  textTransform: "uppercase",
+                  borderRadius: "0 2px 2px 0",
+                  transition: "all 0.3s",
+                  fontFamily: "inherit",
+                  whiteSpace: "nowrap",
+                }}
+                onMouseEnter={(e) => {
+                  if (!state.submitting)
+                    (e.currentTarget as HTMLElement).style.background = "#FFD040";
+                }}
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLElement).style.background = "#EEAA00")
+                }
+              >
+                {state.submitting ? "Sending…" : "Send"}
+              </button>
+            </div>
+
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+              style={{
+                display: "block",
+                marginTop: 14,
+                color: "#E8846B",
+                fontSize: 13,
+                letterSpacing: "0.02em",
               }}
             />
-            <button
-              onClick={() => {
-                if (email) setSubmitted(true);
-              }}
+            <ValidationError
+              errors={state.errors}
               style={{
-                padding: "16px 32px",
-                background: "#EEAA00",
-                border: "none",
-                cursor: "pointer",
-                color: "#1A0D06",
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: 2,
-                textTransform: "uppercase",
-                borderRadius: "0 2px 2px 0",
-                transition: "all 0.3s",
-                fontFamily: "inherit",
+                display: "block",
+                marginTop: 8,
+                color: "#E8846B",
+                fontSize: 13,
+                letterSpacing: "0.02em",
               }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.background = "#FFD040")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.background = "#EEAA00")
-              }
-            >
-              Send
-            </button>
-          </div>
+            />
+          </form>
         ) : (
           <div
             style={{
