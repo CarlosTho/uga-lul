@@ -518,7 +518,7 @@ function About() {
 
           <a
             href="/about"
-            className="lul-view-all-btn lul-cta-block"
+            className="lul-cta-primary"
             style={{
               marginTop: 32,
               opacity: visible ? 1 : 0,
