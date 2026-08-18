@@ -1213,7 +1213,7 @@ function Join() {
               animation: "fadeUp 0.5s ease both",
             }}
           >
-            ¡Bienvenido, hermano! We&rsquo;ll be in touch soon.
+            We&rsquo;ll be in touch soon.
           </div>
         )}
 
