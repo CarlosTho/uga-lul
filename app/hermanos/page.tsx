@@ -180,6 +180,22 @@ function PageHero() {
           <em className="gold-shine" style={{ fontStyle: "normal" }}>Beta Tau</em>{" "}
           Chapter
         </h1>
+        <p
+          className="lul-hermanos-hero-sub"
+          style={{
+            margin: "24px auto 0",
+            maxWidth: 620,
+            fontSize: "clamp(15px, 1.7vw, 18px)",
+            lineHeight: 1.75,
+            color: "#C9BFB0",
+            opacity: visible ? 1 : 0,
+            animation: visible ? "fadeUp 0.8s 0.35s ease both" : "none",
+          }}
+        >
+          Scholars, leaders, and servants of the community — every hermano who
+          has crossed at the University of Georgia carries the legacy of La
+          Unidad Latina forward. These are the men of Beta Tau.
+        </p>
       </div>
     </section>
   );

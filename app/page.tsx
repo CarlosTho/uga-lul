@@ -256,10 +256,10 @@ function Hero() {
             className="lul-hero-title-2"
             style={{
               fontFamily: SERIF,
-              fontSize: "clamp(28px, 4.2vw, 72px)",
+              fontSize: "clamp(40px,5.5vw,82px)",
               fontWeight: 700,
-              lineHeight: 1.08,
-              letterSpacing: -0.5,
+              lineHeight: 1.05,
+              letterSpacing: -1,
               margin: "0 0 32px",
               padding: 0,
               textAlign: "center",
@@ -272,7 +272,7 @@ function Hero() {
               animation: titleVisible
                 ? "titleSweepIn 1.95s 0.82s cubic-bezier(0.22, 1, 0.36, 1) both, shimmer 4s 2.9s linear infinite"
                 : "none",
-              maxWidth: "min(900px, 100%)",
+              maxWidth: "min(1100px, 100%)",
               marginLeft: "auto",
               marginRight: "auto",
               willChange: "transform, filter, clip-path, opacity",
