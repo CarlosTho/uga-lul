@@ -500,6 +500,15 @@ body {
   outline-offset: 3px;
 }
 
+/* Section eyebrow labels ("Who We Are", "Current brothers") - larger on phones */
+@media (max-width: 640px) {
+  .lul-eyebrow {
+    font-size: 14px !important;
+    letter-spacing: 3px !important;
+    font-weight: 600 !important;
+  }
+}
+
 /* Mobile: full-width taps, comfortable hit targets */
 @media (max-width: 640px) {
   .lul-cta-primary {

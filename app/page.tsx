@@ -418,6 +418,7 @@ function About() {
       >
         <div style={{ minWidth: 0 }}>
           <div
+            className="lul-eyebrow"
             style={{
               fontSize: 11,
               letterSpacing: 4,
@@ -773,6 +774,7 @@ function Hermanos() {
         >
           <div>
             <div
+              className="lul-eyebrow"
               style={{
                 fontSize: 11,
                 letterSpacing: 4,
@@ -802,25 +804,6 @@ function Hermanos() {
               Chapter
             </h2>
           </div>
-          <a
-            href="/hermanos"
-            className="lul-view-all-btn"
-            style={{
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.6s 0.2s ease both" : "none",
-            }}
-          >
-            View All
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path
-                d="M2 7h10M8 3l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
         </div>
 
         <div
@@ -930,25 +913,6 @@ function Timeline() {
               A Legacy in Time
             </h2>
           </div>
-          <a
-            href="/about"
-            className="lul-view-all-btn"
-            style={{
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.6s 0.2s ease both" : "none",
-            }}
-          >
-            View All
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path
-                d="M2 7h10M8 3l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
         </div>
 
         <div className="lul-timeline-track" style={{ position: "relative" }}>

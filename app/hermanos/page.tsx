@@ -6,7 +6,6 @@ import Particles from "@/components/particles";
 import { useScrollReveal } from "@/lib/use-scroll-reveal";
 
 const SERIF = "var(--font-cormorant), 'Cormorant Garamond', serif";
-const BEBAS = "var(--font-bebas), 'Bebas Neue', sans-serif";
 
 interface LineRecord {
   season: string;
@@ -121,36 +120,6 @@ function PageHero() {
         }}
       />
       <Particles count={14} />
-
-      <div
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -46%)",
-          width: "min(100%, 100vw)",
-          paddingLeft: 16,
-          paddingRight: 16,
-          boxSizing: "border-box",
-          fontFamily: BEBAS,
-          fontSize: "clamp(48px, 16vw, 220px)",
-          letterSpacing: "clamp(0.04em, 1.4vw, 0.14em)",
-          color: "transparent",
-          WebkitTextStroke: "1px rgba(238,170,0,0.16)",
-          background:
-            "linear-gradient(180deg, rgba(238,170,0,0.14) 0%, rgba(238,170,0,0.04) 100%)",
-          WebkitBackgroundClip: "text",
-          backgroundClip: "text",
-          lineHeight: 1,
-          pointerEvents: "none",
-          userSelect: "none",
-          whiteSpace: "nowrap",
-          textAlign: "center",
-          zIndex: 2,
-        }}
-      >
-        HERMANOS
-      </div>
 
       <div
         style={{
