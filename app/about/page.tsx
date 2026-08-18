@@ -27,13 +27,13 @@ const PILLARS: Pillar[] = [
     num: "02",
     icon: "🤝",
     title: "Brotherhood",
-    desc: "We cultivate unity, accountability, and lifelong bonds — supporting one another as brothers on campus and beyond.",
+    desc: "We cultivate unity, accountability, and lifelong bonds, supporting one another as brothers on campus and beyond.",
   },
   {
     num: "03",
     icon: "🌎",
     title: "Culture",
-    desc: "We celebrate diversity and foster cultural awareness — promoting understanding, inclusion, and pride in Latino heritage both on campus and beyond.",
+    desc: "We celebrate diversity and foster cultural awareness, promoting understanding, inclusion, and pride in Latino heritage both on campus and beyond.",
   },
   {
     num: "04",
@@ -82,30 +82,6 @@ function PageHero() {
         }}
       />
       <Particles count={14} />
-
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-30px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          fontFamily: BEBAS,
-          fontSize: "clamp(100px, 18vw, 240px)",
-          letterSpacing: "0.2em",
-          color: "transparent",
-          WebkitTextStroke: "1px rgba(238,170,0,0.08)",
-          background:
-            "linear-gradient(180deg, rgba(238,170,0,0.07) 0%, rgba(238,170,0,0.01) 100%)",
-          WebkitBackgroundClip: "text",
-          backgroundClip: "text",
-          lineHeight: 1,
-          pointerEvents: "none",
-          userSelect: "none",
-          whiteSpace: "nowrap",
-        }}
-      >
-        ABOUT
-      </div>
 
       <div
         style={{
@@ -170,7 +146,7 @@ function PageHero() {
             animation: visible ? "fadeUp 0.8s 0.4s ease both" : "none",
           }}
         >
-          A small group of dedicated men can achieve what others deem
+          A group of dedicated men can achieve what others deem
           impossible. This is our philosophy, our purpose, our pact.
         </p>
       </div>
@@ -238,7 +214,7 @@ function Philosophy() {
           We believe in defining our own path and shaping our own destiny. What
           sets us apart is not just our drive to succeed but our commitment to
           inspire greatness in one another. Through relentless work ethic and
-          shared purpose, we prove that a small group of dedicated men can
+          shared purpose, we prove that a group of dedicated men can
           achieve what others deem{" "}
           <strong style={{ color: "#FFD040" }}>impossible</strong>.
         </p>

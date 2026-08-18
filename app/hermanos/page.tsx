@@ -20,7 +20,7 @@ interface LineRecord {
 
 const LINE_HISTORY: LineRecord[] = [
   {
-    season: "Spring 2017 — Alpha Line",
+    season: "Spring 2017 Alpha Line",
     hermanos: [
       "Brian Noble",
       "Carlos Alberto Hernandez Jr.",
@@ -28,16 +28,16 @@ const LINE_HISTORY: LineRecord[] = [
     ],
   },
   {
-    season: "Spring 2018 — Beta Line",
+    season: "Spring 2018 Beta Line",
     hermanos: ["Flavio Salgado-Avila", "Joshua Duarte", "Noel Gonzalez"],
   },
   {
-    season: "Spring 2019 — Gamma Line",
+    season: "Spring 2019 Gamma Line",
     note: "first solo in BT history",
     hermanos: ["Michael Stone Jr."],
   },
   {
-    season: "Spring 2021 — Delta Line",
+    season: "Spring 2021 Delta Line",
     hermanos: [
       "Cesar Miguel Hernandez",
       "Michael Adrian Lira",
@@ -45,16 +45,16 @@ const LINE_HISTORY: LineRecord[] = [
     ],
   },
   {
-    season: "Fall 2023 — Epsilon Line",
+    season: "Fall 2023 Epsilon Line",
     note: "second solo in BT history",
     hermanos: ["Jason Steve Pineda"],
   },
   {
-    season: "Spring 2024 — Zeta Line",
+    season: "Spring 2024 Zeta Line",
     hermanos: ["Eric Ezekiel Tovar", "Michael Garcia"],
   },
   {
-    season: "Spring 2025 — Eta Line",
+    season: "Spring 2025 Eta Line",
     note: "largest line in BT history",
     hermanos: [
       "Bryan Acevedo Sierra",
@@ -65,7 +65,7 @@ const LINE_HISTORY: LineRecord[] = [
     ],
   },
   {
-    season: "Spring 2026 — Theta Line",
+    season: "Spring 2026 Theta Line",
     hermanos: ["Angelo Vallecillo", "Daniel Acosta", "Winston Chung"],
   },
   {

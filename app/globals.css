@@ -33,7 +33,7 @@ body {
   padding: 0;
 }
 
-/* Page shell — prevents fixed glow / wide hero layers from widening scroll width on mobile */
+/* Page shell - prevents fixed glow / wide hero layers from widening scroll width on mobile */
 .lul-site-root {
   width: 100%;
   max-width: 100%;
@@ -78,7 +78,7 @@ body {
   }
 }
 
-/** Who We Are — photo enters from the right */
+/** Who We Are - photo enters from the right */
 @keyframes lulAboutPhotoSideIn {
   from {
     opacity: 0;
@@ -101,7 +101,7 @@ body {
 /* Shining gold sweep used on emphasized words like "Beta Tau" */
 @keyframes goldShine {
   0% {
-    background-position: -200% center;
+    background-position: 0% center;
   }
   100% {
     background-position: 200% center;
@@ -122,8 +122,10 @@ body {
     #FFC83D 70%,
     #C98A00 100%
   );
-  background-size: 250% auto;
-  background-position: -125% center;
+  /* 200% size + a 200% position sweep shifts the gradient by exactly one
+     tile per cycle, so the loop restart is invisible */
+  background-size: 200% auto;
+  background-position: 0% center;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -223,7 +225,7 @@ body {
   }
 }
 
-/* Hero — dramatic entrance for "La Unidad Latina," */
+/* Hero - dramatic entrance for "La Unidad Latina," */
 @keyframes titleDramaIn {
   0% {
     opacity: 0;
@@ -246,7 +248,7 @@ body {
   }
 }
 
-/* Hero — sweep-in reveal for "Lambda Upsilon Lambda Fraternity, Inc." */
+/* Hero - sweep-in reveal for "Lambda Upsilon Lambda Fraternity, Inc." */
 @keyframes titleSweepIn {
   0% {
     opacity: 0;

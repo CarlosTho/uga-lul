@@ -118,6 +118,36 @@ function Hero() {
         }}
       />
 
+      {/* Chapter crest, faded in behind the hero copy */}
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: `translate(-50%, -50%) translateY(${orbFloat2}px)`,
+          width: narrow ? "min(78vw, 300px)" : "min(46vw, 460px)",
+          aspectRatio: "300 / 335",
+          zIndex: 1,
+          opacity: 0.16,
+          pointerEvents: "none",
+          maskImage:
+            "radial-gradient(ellipse at center, #000 55%, transparent 82%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse at center, #000 55%, transparent 82%)",
+          willChange: "transform",
+        }}
+      >
+        <Image
+          src="/lul-crest.png"
+          alt=""
+          aria-hidden
+          fill
+          priority
+          sizes="(max-width: 640px) 78vw, 46vw"
+          style={{ objectFit: "contain" }}
+        />
+      </div>
+
       <Particles count={20} />
 
       <div
@@ -522,7 +552,7 @@ function About() {
             >
               <Image
                 src="/lul-group-pic.png"
-                alt="La Unidad Latina — group photo"
+                alt="La Unidad Latina group photo"
                 fill
                 priority
                 sizes="(max-width: 900px) 92vw, 680px"

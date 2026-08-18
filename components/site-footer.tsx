@@ -39,7 +39,7 @@ export default function SiteFooter() {
             letterSpacing: 2,
           }}
         >
-          ΛΥΛ — Beta Tau
+          ΛΥΛ Beta Tau
         </div>
         <div style={{ fontSize: 11, color: "#8A6030", letterSpacing: 1 }}>
           University of Georgia

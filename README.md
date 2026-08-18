@@ -1,6 +1,6 @@
 # uga-lul
 
-**ΛΥΛ — Beta Tau Chapter (University of Georgia) — Website**
+**ΛΥΛ - Beta Tau Chapter (University of Georgia) - Website**
 
 ---
 
@@ -12,7 +12,7 @@ A single-page style marketing site for the Beta Tau Chapter of La Unidad Latina,
 
 ## How it was created (big picture)
 
-1. The project started from the official Next.js starter (**Create Next App**) — that gives you TypeScript, the App Router folder layout, ESLint, and a working dev server out of the box.
+1. The project started from the official Next.js starter (**Create Next App**) - that gives you TypeScript, the App Router folder layout, ESLint, and a working dev server out of the box.
 
 2. On top of that baseline, custom pages and components were added:
    - The home page composes sections (Hero, About, Hermanos preview, Timeline, Join) in one file for speed; other chapters could split these later.
@@ -27,9 +27,9 @@ A single-page style marketing site for the Beta Tau Chapter of La Unidad Latina,
 
 ```
 my-app/
-  app/                      ← Next.js "App Router" — URLs map to folders here
+  app/                      ← Next.js "App Router" - URLs map to folders here
     layout.tsx              Root layout: fonts, <body>, global floating symbol
-    page.tsx                Home "/" — main landing (all major sections)
+    page.tsx                Home "/" - main landing (all major sections)
     globals.css             Global CSS: variables, keyframes, mobile tweaks
     loading.tsx             Optional loading UI
     about/
@@ -44,7 +44,7 @@ my-app/
     particles.tsx
     shield-logo.tsx
     ui/
-      button.tsx            (shadcn-style button — Radix slot)
+      button.tsx            (shadcn-style button - Radix slot)
 
   lib/                      Small hooks and helpers
     use-scroll-reveal.ts    IntersectionObserver for scroll-in animations
@@ -140,7 +140,7 @@ npm run lint      # runs Next.js ESLint checks
 
 ## Deploy to Vercel (this repo)
 
-This app is a normal **Next.js 15** project. Vercel detects it from `package.json` — you do **not** need a `vercel.json` file for a basic deploy.
+This app is a normal **Next.js 15** project. Vercel detects it from `package.json` - you do **not** need a `vercel.json` file for a basic deploy.
 
 ### One-time setup
 
@@ -152,9 +152,9 @@ This app is a normal **Next.js 15** project. Vercel detects it from `package.jso
 
 | Setting | Value |
 |--------|--------|
-| **Framework Preset** | **Next.js** (or leave **Auto** — do **not** use “Other”) |
-| **Root Directory** | **`./`** — only change this if `package.json` is *inside* a subfolder (e.g. `my-app`). For `uga-lul` with the app at the repo root, keep **`./`**. |
-| **Build Command** | Default (`next build` — leave blank / default) |
+| **Framework Preset** | **Next.js** (or leave **Auto** - do **not** use “Other”) |
+| **Root Directory** | **`./`** - only change this if `package.json` is *inside* a subfolder (e.g. `my-app`). For `uga-lul` with the app at the repo root, keep **`./`**. |
+| **Build Command** | Default (`next build` - leave blank / default) |
 | **Output Directory** | Default (leave blank) |
 | **Install Command** | Default (`npm install`) |
 
@@ -172,7 +172,7 @@ No **environment variables** are required for the current site.
 
 - Confirm **Root Directory** points at the folder that contains **`package.json`**.
 - Open the failed deployment → **Building** log; fix the error locally, then `git push` again.
-- Run **`npm run build`** on your machine first — it should pass (same command Vercel runs).
+- Run **`npm run build`** on your machine first - it should pass (same command Vercel runs).
 
 ### Other hosts
 
