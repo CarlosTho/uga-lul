@@ -174,7 +174,7 @@ function Hero() {
             marginTop: narrow ? 40 : 160,
             marginBottom: 24,
             opacity: titleVisible ? 1 : 0,
-            animation: titleVisible ? "fadeUp 0.7s ease forwards" : "none",
+            animation: titleVisible ? "fadeUp 1.05s ease forwards" : "none",
           }}
         >
           <div
@@ -212,15 +212,15 @@ function Hero() {
           style={{
             width: "100%",
             opacity: titleVisible ? 1 : 0,
-            animation: titleVisible ? "heroTextIn 0.9s 0.1s ease both" : "none",
+            animation: titleVisible ? "heroTextIn 1.35s 0.15s ease both" : "none",
           }}
         >
           <div
             style={{
               fontFamily: SERIF,
               fontSize: narrow
-                ? "clamp(20px, 5.4vw, 24px)"
-                : "clamp(16px, 2vw, 18px)",
+                ? "clamp(23px, 6.2vw, 29px)"
+                : "clamp(21px, 2.7vw, 27px)",
               fontStyle: "italic",
               color: "#EEAA00",
               fontWeight: 400,
@@ -245,7 +245,7 @@ function Hero() {
               textAlign: "center",
               opacity: titleVisible ? 1 : 0,
               animation: titleVisible
-                ? "titleDramaIn 1.1s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both"
+                ? "titleDramaIn 1.65s 0.38s cubic-bezier(0.22, 1, 0.36, 1) both"
                 : "none",
               willChange: "transform, filter, opacity",
             }}
@@ -270,7 +270,7 @@ function Hero() {
               backgroundClip: "text",
               opacity: titleVisible ? 1 : 0,
               animation: titleVisible
-                ? "titleSweepIn 1.3s 0.55s cubic-bezier(0.22, 1, 0.36, 1) both, shimmer 4s 1.9s linear infinite"
+                ? "titleSweepIn 1.95s 0.82s cubic-bezier(0.22, 1, 0.36, 1) both, shimmer 4s 2.9s linear infinite"
                 : "none",
               maxWidth: "min(900px, 100%)",
               marginLeft: "auto",
@@ -293,7 +293,7 @@ function Hero() {
             padding: 0,
             textAlign: "center",
             opacity: titleVisible ? 1 : 0,
-            animation: titleVisible ? "fadeUp 0.8s 0.4s ease both" : "none",
+            animation: titleVisible ? "fadeUp 1.2s 0.6s ease both" : "none",
           }}
         >
           A Latino-based fraternity built on four pillars:{" "}
@@ -310,7 +310,7 @@ function Hero() {
             alignItems: "center",
             width: "100%",
             opacity: titleVisible ? 1 : 0,
-            animation: titleVisible ? "fadeUp 0.8s 0.6s ease both" : "none",
+            animation: titleVisible ? "fadeUp 1.2s 0.9s ease both" : "none",
           }}
         >
           <a
