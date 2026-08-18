@@ -283,7 +283,7 @@ function Hero() {
           }}
         >
           <a
-            href="#about"
+            href="#join"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -321,7 +321,7 @@ function Hero() {
                 "inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -2px 0 rgba(120,70,0,0.55), 0 4px 14px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,225,140,0.4)";
             }}
           >
-            Learn More
+            Join
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 d="M2 7h10M8 3l4 4-4 4"
@@ -575,7 +575,7 @@ const LANDING_BROTHERS = [
   { name: "Ivan Mendoza", initial: "IM", role: "Brother", year: "Undergrad", line: "Eta" },
   { name: "Carlos Cruz", initial: "CC", role: "Brother", year: "Undergrad", line: "Eta" },
   { name: "Bryan Acevedo Sierra", initial: "BS", role: "Brother", year: "Undergrad", line: "Eta" },
-  { name: "JoseLuis Reyes", initial: "JR", role: "Brother", year: "Undergrad", line: "Eta" },
+  { name: "Jose Luis Reyes", initial: "JR", role: "Brother", year: "Undergrad", line: "Eta" },
   { name: "Angelo Vallecillo", initial: "AV", role: "Brother", year: "Undergrad", line: "Theta" },
   { name: "Daniel Acosta", initial: "DA", role: "Brother", year: "Undergrad", line: "Theta" },
   { name: "Winston Chung", initial: "WC", role: "Brother", year: "Undergrad", line: "Theta" },
@@ -834,7 +834,7 @@ function Timeline() {
                 animation: visible ? "fadeUp 0.6s ease both" : "none",
               }}
             >
-              Current brothers
+              Our History
             </div>
             <h2
               style={{
