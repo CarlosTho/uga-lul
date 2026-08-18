@@ -351,7 +351,7 @@ function Hero() {
                 "inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -2px 0 rgba(120,70,0,0.55), 0 4px 14px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,225,140,0.4)";
             }}
           >
-            Join
+            Interested?
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 d="M2 7h10M8 3l4 4-4 4"
