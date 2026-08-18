@@ -125,7 +125,7 @@ function Hero() {
           top: "50%",
           left: "50%",
           transform: `translate(-50%, -50%) translateY(${orbFloat2}px)`,
-          width: narrow ? "min(78vw, 300px)" : "min(46vw, 460px)",
+          width: narrow ? "min(52vw, 200px)" : "min(30vw, 300px)",
           aspectRatio: "300 / 335",
           zIndex: 1,
           opacity: 0.16,
@@ -143,7 +143,7 @@ function Hero() {
           aria-hidden
           fill
           priority
-          sizes="(max-width: 640px) 78vw, 46vw"
+          sizes="(max-width: 640px) 52vw, 30vw"
           style={{ objectFit: "contain" }}
         />
       </div>
@@ -514,6 +514,27 @@ function About() {
             The Beta Tau Chapter carries that legacy forward, building leaders
             who serve their communities with pride, integrity, and purpose.
           </p>
+
+          <a
+            href="/about"
+            className="lul-view-all-btn lul-cta-block"
+            style={{
+              marginTop: 32,
+              opacity: visible ? 1 : 0,
+              animation: visible ? "fadeUp 0.7s 0.55s ease both" : "none",
+            }}
+          >
+            About Us
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path
+                d="M2 7h10M8 3l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
         </div>
 
         <div
@@ -820,6 +841,34 @@ function Hermanos() {
               visible={visible}
             />
           ))}
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "clamp(36px, 6vw, 56px)",
+          }}
+        >
+          <a
+            href="/hermanos"
+            className="lul-cta-primary"
+            style={{
+              opacity: visible ? 1 : 0,
+              animation: visible ? "fadeUp 0.7s 0.4s ease both" : "none",
+            }}
+          >
+            View More Brothers
+            <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+              <path
+                d="M2 7h10M8 3l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

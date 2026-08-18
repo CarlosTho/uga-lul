@@ -7,7 +7,6 @@ import Particles from "@/components/particles";
 import { useScrollReveal } from "@/lib/use-scroll-reveal";
 
 const SERIF = "var(--font-cormorant), 'Cormorant Garamond', serif";
-const BEBAS = "var(--font-bebas), 'Bebas Neue', sans-serif";
 
 interface Pillar {
   num: string;
