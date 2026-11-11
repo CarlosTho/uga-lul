@@ -15,7 +15,7 @@ interface Award {
 const AWARDS_YEAR = "2026";
 
 const AWARDS: Award[] = [
-  { from: "MGC", title: "Chapter of the Year Potluck" },
+  { from: "MGC", title: "Chapter of the Year", detail: "2025-2026" },
   {
     from: "MGC",
     title: "Event of the Year",
@@ -36,9 +36,8 @@ const AWARDS: Award[] = [
     detail: "Michael Stone Jr.",
   },
   {
-    from: "National",
+    from: "National Board",
     title: "Nominated for Chapter of the Year",
-    detail: "Within the national organization",
   },
 ];
 
