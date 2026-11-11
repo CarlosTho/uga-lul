@@ -13,6 +13,8 @@ interface LineRecord {
   note?: string;
   /** Plain names (sorted alphabetically when rendered) */
   hermanos: string[];
+  /** Show names in the order listed instead of alphabetically */
+  keepOrder?: boolean;
   /** Gold title + soft glow (e.g. upcoming line) */
   titleGold?: boolean;
 }
@@ -20,10 +22,11 @@ interface LineRecord {
 const LINE_HISTORY: LineRecord[] = [
   {
     season: "Spring 2017 Alpha Line",
+    keepOrder: true,
     hermanos: [
       "Brian Noble",
-      "Carlos Alberto Hernandez Jr.",
       "Ronaldo Reyes",
+      "Carlos Alberto Hernandez Jr.",
     ],
   },
   {
@@ -268,7 +271,9 @@ function CrossingHistory() {
           style={{ display: "flex", flexDirection: "column", gap: 28 }}
         >
           {LINE_HISTORY.map((line, i) => {
-            const names = sortNamesAlpha(line.hermanos);
+            const names = line.keepOrder
+              ? line.hermanos
+              : sortNamesAlpha(line.hermanos);
             return (
               <div
                 key={line.season}
