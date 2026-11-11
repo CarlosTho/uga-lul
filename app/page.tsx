@@ -371,12 +371,6 @@ function Hero() {
 }
 
 // ── About ────────────────────────────────────────────────────────
-const NATIONAL_STATS = [
-  { value: "85+", label: "Undergraduate chapters" },
-  { value: "17", label: "States" },
-  { value: "1982", label: "Year founded" },
-];
-
 function About() {
   const [ref, visible] = useScrollReveal();
   /** Own observer so the slide runs when the photo is actually in view (grid fires too early on mobile). */
@@ -501,7 +495,7 @@ function About() {
             }}
           >
             Nationwide, the fraternity includes{" "}
-            <strong style={{ color: "#FFFFFF", fontWeight: 700 }}>98+</strong>{" "}
+            <strong style={{ color: "#FFFFFF", fontWeight: 700 }}>85+</strong>{" "}
             active undergraduate chapters and is chartered at all{" "}
             <strong style={{ color: "#FFFFFF", fontWeight: 700 }}>
               8 Ivy League
@@ -522,49 +516,6 @@ function About() {
             The Beta Tau Chapter carries that legacy forward, building leaders
             who serve their communities with pride, integrity, and purpose.
           </p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-              gap: "clamp(12px, 3vw, 28px)",
-              marginTop: 32,
-              paddingTop: 24,
-              borderTop: "1px solid rgba(238,170,0,0.25)",
-              opacity: visible ? 1 : 0,
-              animation: visible ? "fadeUp 0.7s 0.5s ease both" : "none",
-            }}
-          >
-            {NATIONAL_STATS.map((stat) => (
-              <div key={stat.label} style={{ minWidth: 0 }}>
-                <div
-                  style={{
-                    margin: 0,
-                    fontFamily: SERIF,
-                    fontSize: "clamp(30px, 7vw, 44px)",
-                    fontWeight: 700,
-                    lineHeight: 1,
-                    color: "#EEAA00",
-                  }}
-                >
-                  {stat.value}
-                </div>
-                <div
-                  style={{
-                    marginTop: 8,
-                    fontSize: "clamp(10px, 2.6vw, 11px)",
-                    fontWeight: 600,
-                    letterSpacing: 2,
-                    textTransform: "uppercase",
-                    color: "#D4B88A",
-                    overflowWrap: "break-word",
-                  }}
-                >
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
 
           <a
             href="/about"
