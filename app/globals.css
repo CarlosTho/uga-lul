@@ -603,3 +603,8 @@ body {
     transition-delay: 0ms !important;
   }
 }
+
+/* Landing Hermanos follows Who We Are directly; trim the stacked top gap */
+section#hermanos {
+  padding-top: clamp(24px, 4vw, 40px) !important;
+}
