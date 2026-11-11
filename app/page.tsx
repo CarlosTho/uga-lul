@@ -495,7 +495,7 @@ function About() {
             }}
           >
             Nationwide, the fraternity includes{" "}
-            <strong style={{ color: "#FFFFFF", fontWeight: 700 }}>85</strong>{" "}
+            <strong style={{ color: "#FFFFFF", fontWeight: 700 }}>98+</strong>{" "}
             active undergraduate chapters and is chartered at all{" "}
             <strong style={{ color: "#FFFFFF", fontWeight: 700 }}>
               8 Ivy League
