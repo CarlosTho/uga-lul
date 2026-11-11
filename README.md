@@ -6,7 +6,7 @@
 
 ## What this is
 
-A single-page style marketing site for the Beta Tau Chapter of La Unidad Latina, Lambda Upsilon Lambda Fraternity, Inc., built with Next.js. It includes extra routes for **About** and **Hermanos** (brothers / crossing history).
+A single-page style marketing site for the Beta Tau Chapter of La Unidad Latina, Lambda Upsilon Lambda Fraternity, Inc., built with Next.js. It includes extra routes for **About** and **Hermanos** (hermanos / crossing history).
 
 ---
 

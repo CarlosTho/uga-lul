@@ -9,10 +9,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:webpack": "next dev"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
+    "@next/swc-darwin-arm64": "^15.5.15",
     "next": "^15.5.15",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

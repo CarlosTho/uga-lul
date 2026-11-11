@@ -134,7 +134,7 @@ function PageHero() {
         }}
       >
         <div
-          className="lul-hermanos-hero-brotherhood-row"
+          className="lul-hermanos-hero-hermandad-row"
           style={{
             display: "flex",
             alignItems: "center",
@@ -155,7 +155,7 @@ function PageHero() {
               fontWeight: 500,
             }}
           >
-            Brotherhood
+            Hermandad
           </span>
           <div style={{ height: 1, width: 40, background: "#EEAA00" }} />
         </div>
@@ -176,7 +176,7 @@ function PageHero() {
             hyphens: "manual",
           }}
         >
-          Our Brothers of the{" "}
+          Our Hermanos of the{" "}
           <em className="gold-shine" style={{ fontStyle: "normal" }}>Beta Tau</em>{" "}
           Chapter
         </h1>
@@ -214,7 +214,7 @@ function CrossingHistory() {
           style={{ textAlign: "center", marginBottom: 56 }}
         >
           <div
-            className="lul-hermanos-brotherhood-pretitle"
+            className="lul-hermanos-hermandad-pretitle"
             style={{
               fontSize: 11,
               letterSpacing: 4,
@@ -225,7 +225,7 @@ function CrossingHistory() {
               animation: visible ? "fadeUp 0.6s ease both" : "none",
             }}
           >
-            Brotherhood
+            Hermandad
           </div>
           <h2
             style={{
@@ -242,7 +242,7 @@ function CrossingHistory() {
               overflowWrap: "break-word",
             }}
           >
-            Our Brothers of the{" "}
+            Our Hermanos of the{" "}
             <em style={{ color: "#EEAA00", fontStyle: "normal" }}>Beta Tau</em>{" "}
             Chapter
           </h2>

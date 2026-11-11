@@ -38,7 +38,7 @@ const caveat = Caveat({
 export const metadata = {
   title: "ΛΥΛ Beta Tau Chapter",
   description:
-    "The Beta Tau Chapter of La Unidad Latina, Lambda Upsilon Lambda Fraternity, Inc. Brotherhood, Culture, Service, Excellence.",
+    "The Beta Tau Chapter of La Unidad Latina, Lambda Upsilon Lambda Fraternity, Inc. Hermandad, Culture, Service, Excellence.",
 };
 
 export const viewport: Viewport = {

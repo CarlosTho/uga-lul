@@ -327,25 +327,25 @@ body {
     gap: 10px !important;
   }
 
-  .lul-hermanos-grid .lul-landing-brother-card {
+  .lul-hermanos-grid .lul-landing-hermano-card {
     padding: 14px 10px !important;
   }
-  .lul-hermanos-grid .lul-landing-brother-card > div:first-child {
+  .lul-hermanos-grid .lul-landing-hermano-card > div:first-child {
     width: 44px !important;
     height: 44px !important;
     font-size: 14px !important;
     margin-bottom: 10px !important;
   }
-  .lul-hermanos-grid .lul-landing-brother-card h3 {
+  .lul-hermanos-grid .lul-landing-hermano-card h3 {
     font-size: 13px !important;
     line-height: 1.2 !important;
   }
-  .lul-hermanos-grid .lul-landing-brother-card .lul-line-pill,
-  .lul-hermanos-grid .lul-landing-brother-card > div {
+  .lul-hermanos-grid .lul-landing-hermano-card .lul-line-pill,
+  .lul-hermanos-grid .lul-landing-hermano-card > div {
     font-size: 9px !important;
   }
 
-  /* /hermanos: tighter stack for Brotherhood → title → crossing subhead */
+  /* /hermanos: tighter stack for Hermandad → title → crossing subhead */
   .lul-hermanos-crossing-section {
     padding-top: 56px !important;
     padding-bottom: 72px !important;
@@ -353,7 +353,7 @@ body {
   .lul-hermanos-crossing-header {
     margin-bottom: 28px !important;
   }
-  .lul-hermanos-crossing-header .lul-hermanos-brotherhood-pretitle {
+  .lul-hermanos-crossing-header .lul-hermanos-hermandad-pretitle {
     margin-bottom: 6px !important;
   }
   .lul-hermanos-crossing-header .lul-hermanos-crossing-sub {
@@ -362,7 +362,7 @@ body {
   .lul-hermanos-crossing-lines {
     gap: 20px !important;
   }
-  .lul-hermanos-page-hero .lul-hermanos-hero-brotherhood-row {
+  .lul-hermanos-page-hero .lul-hermanos-hero-hermandad-row {
     margin-bottom: 12px !important;
     gap: 10px !important;
   }
@@ -427,7 +427,7 @@ body {
     border-radius: 0 0 2px 2px !important;
   }
 
-  .lul-landing-brother-card {
+  .lul-landing-hermano-card {
     padding: 26px 18px !important;
   }
 
@@ -462,7 +462,7 @@ body {
   gap: 12px;
 }
 
-/* Primary gold CTA - the loudest control on the page ("View More Brothers") */
+/* Primary gold CTA - the loudest control on the page ("View More Hermanos") */
 .lul-cta-primary {
   display: inline-flex;
   align-items: center;
@@ -500,7 +500,7 @@ body {
   outline-offset: 3px;
 }
 
-/* Section eyebrow labels ("Who We Are", "Current brothers") - larger on phones */
+/* Section eyebrow labels ("Who We Are", "Current hermanos") - larger on phones */
 @media (max-width: 640px) {
   .lul-eyebrow {
     font-size: 14px !important;

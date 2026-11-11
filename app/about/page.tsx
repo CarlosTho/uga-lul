@@ -25,8 +25,8 @@ const PILLARS: Pillar[] = [
   {
     num: "02",
     icon: "🤝",
-    title: "Brotherhood",
-    desc: "We cultivate unity, accountability, and lifelong bonds, supporting one another as brothers on campus and beyond.",
+    title: "Hermandad",
+    desc: "We cultivate unity, accountability, and lifelong bonds, supporting one another as hermanos on campus and beyond.",
   },
   {
     num: "03",

@@ -297,7 +297,7 @@ function Hero() {
           }}
         >
           A Latino-based fraternity built on four pillars:{" "}
-          <strong>Academics</strong>, <strong>Brotherhood</strong>,{" "}
+          <strong>Academics</strong>, <strong>Hermandad</strong>,{" "}
           <strong>Culture</strong>, and <strong>Service</strong>.
         </p>
 
@@ -447,7 +447,7 @@ function About() {
               animation: visible ? "fadeUp 0.7s 0.1s ease both" : "none",
             }}
           >
-            Brotherhood Rooted
+            Hermandad Rooted
             <br />
             <em style={{ color: "#EEAA00" }}>in Culture</em>
           </h2>
@@ -480,7 +480,7 @@ function About() {
               1982 at Cornell University
             </strong>{" "}
             with a singular mission: to provide Latino men and their allies a
-            brotherhood that uplifts, empowers, and unites.
+            hermandad that uplifts, empowers, and unites.
           </p>
           <p
             className="lul-about-copy"
@@ -623,18 +623,18 @@ function About() {
 }
 
 // ── Hermanos (landing): matches /hermanos undergrad roster · Eta → Theta ──
-const LANDING_BROTHERS = [
-  { name: "Nathan Valles", initial: "NV", role: "Brother", year: "Undergrad", line: "Eta" },
-  { name: "Ivan Mendoza", initial: "IM", role: "Brother", year: "Undergrad", line: "Eta" },
-  { name: "Carlos Cruz", initial: "CC", role: "Brother", year: "Undergrad", line: "Eta" },
-  { name: "Bryan Acevedo Sierra", initial: "BS", role: "Brother", year: "Undergrad", line: "Eta" },
-  { name: "Jose Luis Reyes", initial: "JR", role: "Brother", year: "Undergrad", line: "Eta" },
-  { name: "Angelo Vallecillo", initial: "AV", role: "Brother", year: "Undergrad", line: "Theta" },
-  { name: "Daniel Acosta", initial: "DA", role: "Brother", year: "Undergrad", line: "Theta" },
-  { name: "Winston Chung", initial: "WC", role: "Brother", year: "Undergrad", line: "Theta" },
+const LANDING_HERMANOS = [
+  { name: "Nathan Valles", initial: "NV", role: "Hermano", year: "Undergrad", line: "Eta" },
+  { name: "Ivan Mendoza", initial: "IM", role: "Hermano", year: "Undergrad", line: "Eta" },
+  { name: "Carlos Cruz", initial: "CC", role: "Hermano", year: "Undergrad", line: "Eta" },
+  { name: "Bryan Acevedo Sierra", initial: "BS", role: "Hermano", year: "Undergrad", line: "Eta" },
+  { name: "Jose Luis Reyes", initial: "JR", role: "Hermano", year: "Undergrad", line: "Eta" },
+  { name: "Angelo Vallecillo", initial: "AV", role: "Hermano", year: "Undergrad", line: "Theta" },
+  { name: "Daniel Acosta", initial: "DA", role: "Hermano", year: "Undergrad", line: "Theta" },
+  { name: "Winston Chung", initial: "WC", role: "Hermano", year: "Undergrad", line: "Theta" },
 ] as const;
 
-type LandingBrother = {
+type LandingHermano = {
   readonly name: string;
   readonly initial: string;
   readonly role: string;
@@ -649,7 +649,7 @@ function LandingHermanosCard({
   setHovered,
   visible,
 }: {
-  b: LandingBrother;
+  b: LandingHermano;
   index: number;
   hovered: number | null;
   setHovered: (n: number | null) => void;
@@ -657,7 +657,7 @@ function LandingHermanosCard({
 }) {
   return (
     <div
-      className="lul-landing-brother-card"
+      className="lul-landing-hermano-card"
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
       style={{
@@ -786,7 +786,7 @@ function Hermanos() {
                 animation: visible ? "fadeUp 0.6s ease both" : "none",
               }}
             >
-              Current brothers
+              Current hermanos
             </div>
             <h2
               style={{
@@ -800,7 +800,7 @@ function Hermanos() {
                 maxWidth: 720,
               }}
             >
-              Our Brothers of the{" "}
+              Our Hermanos of the{" "}
               <em className="gold-shine" style={{ fontStyle: "normal" }}>Beta Tau</em>{" "}
               Chapter
             </h2>
@@ -815,7 +815,7 @@ function Hermanos() {
             gap: 24,
           }}
         >
-          {LANDING_BROTHERS.map((b, i) => (
+          {LANDING_HERMANOS.map((b, i) => (
             <LandingHermanosCard
               key={b.name}
               b={b}
@@ -842,7 +842,7 @@ function Hermanos() {
               animation: visible ? "fadeUp 0.7s 0.4s ease both" : "none",
             }}
           >
-            View More Brothers
+            View More Hermanos
             <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
               <path
                 d="M2 7h10M8 3l4 4-4 4"
