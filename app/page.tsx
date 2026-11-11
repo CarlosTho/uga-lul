@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import SiteNavbar from "@/components/site-navbar";
 import SiteFooter from "@/components/site-footer";
+import LandingAwards from "@/components/landing-awards";
 import Particles from "@/components/particles";
 import { useScrollReveal } from "@/lib/use-scroll-reveal";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
@@ -1266,6 +1267,7 @@ export default function Home() {
       <About />
       <Hermanos />
       <Timeline />
+      <LandingAwards />
       <Join />
       <SiteFooter />
     </div>
